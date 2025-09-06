@@ -66,9 +66,9 @@ export default function Hero() {
       connections: NetworkParticle[]
       maxConnections: number
 
-      constructor() {
-        this.x = Math.random() * canvas.width
-        this.y = Math.random() * canvas.height
+      constructor(canvasWidth: number, canvasHeight: number) {
+        this.x = Math.random() * canvasWidth
+        this.y = Math.random() * canvasHeight
         this.vx = (Math.random() - 0.5) * 0.8 // Faster movement
         this.vy = (Math.random() - 0.5) * 0.8
         this.size = Math.random() * 2 + 1
@@ -76,25 +76,25 @@ export default function Hero() {
         this.maxConnections = 3
       }
 
-      update() {
+      update(canvasWidth: number, canvasHeight: number) {
         // Update position
         this.x += this.vx
         this.y += this.vy
 
         // Bounce off edges
-        if (this.x <= 0 || this.x >= canvas.width) {
+        if (this.x <= 0 || this.x >= canvasWidth) {
           this.vx = -this.vx
         }
-        if (this.y <= 0 || this.y >= canvas.height) {
+        if (this.y <= 0 || this.y >= canvasHeight) {
           this.vy = -this.vy
         }
 
         // Keep within bounds
-        this.x = Math.max(0, Math.min(canvas.width, this.x))
-        this.y = Math.max(0, Math.min(canvas.height, this.y))
+        this.x = Math.max(0, Math.min(canvasWidth, this.x))
+        this.y = Math.max(0, Math.min(canvasHeight, this.y))
       }
 
-      draw() {
+      draw(ctx: CanvasRenderingContext2D) {
         // Draw particle
         ctx.save()
         ctx.fillStyle = '#3b82f6' // Blue color for both themes
@@ -106,7 +106,7 @@ export default function Hero() {
         ctx.restore()
       }
 
-      drawConnections() {
+      drawConnections(ctx: CanvasRenderingContext2D) {
         this.connections.forEach(connection => {
           const dx = this.x - connection.x
           const dy = this.y - connection.y
@@ -150,7 +150,7 @@ export default function Hero() {
     const particleCount = 50 // Fewer particles for better network effect
 
     for (let i = 0; i < particleCount; i++) {
-      particles.push(new NetworkParticle())
+      particles.push(new NetworkParticle(canvas.width, canvas.height))
     }
 
     // Animation loop
@@ -159,7 +159,7 @@ export default function Hero() {
 
       // Update particles
       particles.forEach(particle => {
-        particle.update()
+        particle.update(canvas.width, canvas.height)
       })
 
       // Update connections
@@ -169,12 +169,12 @@ export default function Hero() {
 
       // Draw connections first (background)
       particles.forEach(particle => {
-        particle.drawConnections()
+        particle.drawConnections(ctx)
       })
 
       // Draw particles (foreground)
       particles.forEach(particle => {
-        particle.draw()
+        particle.draw(ctx)
       })
 
       requestAnimationFrame(animate)

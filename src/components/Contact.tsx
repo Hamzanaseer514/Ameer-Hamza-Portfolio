@@ -77,10 +77,10 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Form */}
-          <div className="card p-8">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          <div className="card p-4 sm:p-6 lg:p-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
               Send Me a Message
             </h3>
             
@@ -96,7 +96,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm sm:text-base"
                   placeholder="Your name"
                 />
               </div>
@@ -112,7 +112,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm sm:text-base"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -128,24 +128,24 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-sm sm:text-base resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="btn-primary w-full flex items-center justify-center gap-2"
+                className="btn-primary w-full flex items-center justify-center gap-2 text-sm sm:text-base py-2 sm:py-3"
               >
-                <Send className="w-5 h-5" />
+                <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                 Send Message
               </button>
             </form>
 
             {/* Map */}
-            <div className="mt-8">
+            <div className="mt-6 sm:mt-8">
               <div className="card p-0 overflow-hidden">
-                <div className="h-64 bg-gray-100 dark:bg-gray-800 relative">
+                <div className="h-48 sm:h-56 lg:h-64 bg-gray-100 dark:bg-gray-800 relative">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.123456789!2d74.3587!3d31.5204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e35e0d5d%3A0x8b5b5b5b5b5b5b5b!2sSialkot%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
                     width="100%"
@@ -156,10 +156,10 @@ export default function Contact() {
                     referrerPolicy="no-referrer-when-downgrade"
                     className="rounded-lg"
                   ></iframe>
-                  <div className="absolute top-4 left-4 bg-white dark:bg-gray-900 px-3 py-2 rounded-lg shadow-lg">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-blue-500" />
-                      <span className="text-sm font-medium text-gray-900 dark:text-white">Sambrial District Sialkot</span>
+                  <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-white dark:bg-gray-900 px-2 py-1 sm:px-3 sm:py-2 rounded-lg shadow-lg">
+                    <div className="flex items-center gap-1 sm:gap-2">
+                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500" />
+                      <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white">Sambrial District Sialkot</span>
                     </div>
                   </div>
                 </div>
@@ -168,10 +168,10 @@ export default function Contact() {
           </div>
 
           {/* Contact Info & Social Links */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Contact Information */}
-            <div className="card p-8">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <div className="card p-4 sm:p-6 lg:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
                 Contact Information
               </h3>
               
@@ -180,16 +180,16 @@ export default function Contact() {
                   <a
                     key={index}
                     href={info.link}
-                    className="flex items-center gap-4 p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
+                    className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white">
                       {info.icon}
                     </div>
-                    <div>
-                      <div className="font-medium text-gray-900 dark:text-white">
+                    <div className="min-w-0 flex-1">
+                      <div className="font-medium text-gray-900 dark:text-white text-sm sm:text-base">
                         {info.title}
                       </div>
-                      <div className="text-gray-600 dark:text-gray-400">
+                      <div className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm truncate">
                         {info.value}
                       </div>
                     </div>
@@ -199,19 +199,19 @@ export default function Contact() {
             </div>
 
             {/* Social Links */}
-            <div className="card p-8">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            <div className="card p-4 sm:p-6 lg:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
                 Follow Me
               </h3>
               
-              <div className="flex gap-4">
+              <div className="flex gap-3 sm:gap-4">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 transition-colors duration-200 ${social.color}`}
+                    className={`w-10 h-10 sm:w-12 sm:h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 transition-colors duration-200 ${social.color}`}
                   >
                     {social.icon}
                   </a>
@@ -220,22 +220,22 @@ export default function Contact() {
             </div>
 
             {/* Quick Info */}
-            <div className="card p-8">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            <div className="card p-4 sm:p-6 lg:p-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-4">
                 Let's Work Together
               </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
+              <p className="text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
                 I'm always open to discussing new opportunities, interesting projects, 
                 or just having a chat about technology and development.
               </p>
-              <div className="grid grid-cols-2 gap-4 text-center">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 text-center">
                 <div>
-                  <div className="text-2xl font-bold gradient-text">24h</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Response Time</div>
+                  <div className="text-xl sm:text-2xl font-bold gradient-text">24h</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Response Time</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold gradient-text">100%</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Client Satisfaction</div>
+                  <div className="text-xl sm:text-2xl font-bold gradient-text">100%</div>
+                  <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Client Satisfaction</div>
                 </div>
               </div>
             </div>
